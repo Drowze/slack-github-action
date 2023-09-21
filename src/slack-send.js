@@ -83,7 +83,7 @@ module.exports = async function slackSend(core) {
             console.log("posting message")
             console.log(JSON.stringify({ github: github.context, env: process.env }, null, 2))
             console.log(JSON.stringify({ channel: channelId.trim(), text: message, ...(payload || {}) }, null, 2))
-            webResponse = await web.chat.postMessage({ channel: channelId.trim(), text: message, ...(payload || {}) });
+            webResponse = false; //await web.chat.postMessage({ channel: channelId.trim(), text: message, ...(payload || {}) });
           }
         }));
       } else {
